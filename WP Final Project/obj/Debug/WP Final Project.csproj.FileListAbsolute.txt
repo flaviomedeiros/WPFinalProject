@@ -1,0 +1,35 @@
+C:\Users\posgrad\Documents\WP Final Project\WP Final Project\Bin\Debug\Assets\ApplicationIcon.png
+C:\Users\posgrad\Documents\WP Final Project\WP Final Project\Bin\Debug\Assets\Tiles\FlipCycleTileLarge.png
+C:\Users\posgrad\Documents\WP Final Project\WP Final Project\Bin\Debug\Assets\Tiles\FlipCycleTileMedium.png
+C:\Users\posgrad\Documents\WP Final Project\WP Final Project\Bin\Debug\Assets\Tiles\FlipCycleTileSmall.png
+C:\Users\posgrad\Documents\WP Final Project\WP Final Project\Bin\Debug\Assets\Tiles\IconicTileMediumLarge.png
+C:\Users\posgrad\Documents\WP Final Project\WP Final Project\Bin\Debug\Assets\Tiles\IconicTileSmall.png
+C:\Users\posgrad\Documents\WP Final Project\WP Final Project\Bin\Debug\WP Final Project.dll
+C:\Users\posgrad\Documents\WP Final Project\WP Final Project\Bin\Debug\WP Final Project.pdb
+C:\Users\posgrad\Documents\WP Final Project\WP Final Project\Bin\Debug\resources.pri
+C:\Users\posgrad\Documents\WP Final Project\WP Final Project\Bin\Debug\AppxManifest.xml
+C:\Users\posgrad\Documents\WP Final Project\WP Final Project\Bin\Debug\WP Final Project.build.appxrecipe
+C:\Users\posgrad\Documents\WP Final Project\WP Final Project\Bin\Debug\Properties\WMAppManifest.xml
+C:\Users\posgrad\Documents\WP Final Project\WP Final Project\Bin\Debug\AppManifest.xaml
+C:\Users\posgrad\Documents\WP Final Project\WP Final Project\Bin\Debug\WP_Final_Project_Debug_AnyCPU.xap
+C:\Users\posgrad\Documents\WP Final Project\WP Final Project\obj\Debug\App.g.cs
+C:\Users\posgrad\Documents\WP Final Project\WP Final Project\obj\Debug\MainPage.g.cs
+C:\Users\posgrad\Documents\WP Final Project\WP Final Project\obj\Debug\WP Final Project.g.resources
+C:\Users\posgrad\Documents\WP Final Project\WP Final Project\obj\Debug\WP_Final_Project.Resources.AppResources.resources
+C:\Users\posgrad\Documents\WP Final Project\WP Final Project\obj\Debug\WP Final Project.csproj.GenerateResource.Cache
+C:\Users\posgrad\Documents\WP Final Project\WP Final Project\obj\Debug\WP Final Project.dll
+C:\Users\posgrad\Documents\WP Final Project\WP Final Project\obj\Debug\WP Final Project.pdb
+C:\Users\posgrad\Documents\WP Final Project\WP Final Project\obj\Debug\priconfig.xml
+C:\Users\posgrad\Documents\WP Final Project\WP Final Project\obj\Debug\priconfig.xml.intermediate
+C:\Users\posgrad\Documents\WP Final Project\WP Final Project\obj\Debug\layout.resfiles
+C:\Users\posgrad\Documents\WP Final Project\WP Final Project\obj\Debug\layout.resfiles.intermediate
+C:\Users\posgrad\Documents\WP Final Project\WP Final Project\obj\Debug\resources.resfiles
+C:\Users\posgrad\Documents\WP Final Project\WP Final Project\obj\Debug\resources.resfiles.intermediate
+C:\Users\posgrad\Documents\WP Final Project\WP Final Project\obj\Debug\pri.resfiles
+C:\Users\posgrad\Documents\WP Final Project\WP Final Project\obj\Debug\pri.resfiles.intermediate
+C:\Users\posgrad\Documents\WP Final Project\WP Final Project\obj\Debug\qualifiers.txt
+C:\Users\posgrad\Documents\WP Final Project\WP Final Project\obj\Debug\qualifiers.txt.intermediate
+C:\Users\posgrad\Documents\WP Final Project\WP Final Project\obj\Debug\MultipleQualifiersPerDimensionFound.txt
+C:\Users\posgrad\Documents\WP Final Project\WP Final Project\obj\Debug\ProjectArchitectures.txt
+C:\Users\posgrad\Documents\WP Final Project\WP Final Project\obj\Debug\MDILProjectFiles.xml
+C:\Users\posgrad\Documents\WP Final Project\WP Final Project\obj\Debug\XapCacheFile.xml
