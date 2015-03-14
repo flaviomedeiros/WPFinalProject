@@ -1,0 +1,22 @@
+-produto
+nome
+id
+preco
+
+-ingredientes
+produto
+descricao
+qtd
+
+-super mercado
+nome
+id
+produtos
+latitude
+longitude
+
+-receita
+ingredientes
+preparo
+nome
+id
