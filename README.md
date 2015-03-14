@@ -18,3 +18,16 @@ Eu como usuário gostaria que a partir de uma visualização de receita, os ingr
 Visualizar Ingrediente
 
 Eu como usuário gostaria que ao clicar em um ingrediente de uma receita, fosse exibido uma descrição sobre o mesmo e os supermercados em que o mesmo encontra-se disponível.
+
+Entrega 1
+Navegabilidade entre telas
+
+Tarefas
+1 - Mapeamento das tabelas
+2 - Criação do banco 
+3 - Criação da tela de Pesquisa de receitas
+4 - Criação da tela de Receitas
+5 - Criação da tela de Lista de ingredientes
+
+Entrega 2
+
