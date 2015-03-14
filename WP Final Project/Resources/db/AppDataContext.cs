@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data.Linq;
 using WP_Final_Project.Resources.db.model;
+using System.Diagnostics;
 
 namespace WP_Final_Project.Resources.db
 {
@@ -51,6 +52,19 @@ namespace WP_Final_Project.Resources.db
 
             add(r1);
             add(r2);
+
+            teste();
+        }
+
+        public void teste()
+        {
+            Debug.WriteLine("teste/appData");
+           List<Receita> receitas = getAllReceitas();
+           List<Ingrediente> ingredientes = receitas.ElementAt(0).Ingredientes.ToList();
+
+           Debug.WriteLine("receitas:" + receitas.Count);
+           Debug.WriteLine("ingredientes:" + ingredientes.Count);
+           Debug.WriteLine("ingrediente.nome:" + ingredientes.ElementAt(0).Produto.Nome);
         }
 
         private void removeAll()

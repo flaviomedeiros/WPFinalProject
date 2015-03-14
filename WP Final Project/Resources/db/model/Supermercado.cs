@@ -24,7 +24,7 @@ namespace WP_Final_Project.Resources.db.model
         {
             set
             {
-                _Produtos = value;
+                _Produtos.Assign(value);
             }
             get
             {
@@ -40,7 +40,8 @@ namespace WP_Final_Project.Resources.db.model
 
         public Supermercado()
         {
-            Produtos = new EntitySet<Produto>();
+            if (_Produtos == null)
+                _Produtos = new EntitySet<Produto>();
         }
     }
 }

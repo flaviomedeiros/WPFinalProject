@@ -27,7 +27,7 @@ namespace WP_Final_Project.Resources.db.model
         {
             set
             {
-                _Ingredientes = value;
+                _Ingredientes.Assign(value);
             }
             get
             {
@@ -37,7 +37,8 @@ namespace WP_Final_Project.Resources.db.model
 
         public Receita()
         {
-            Ingredientes = new EntitySet<Ingrediente>();
+            if (_Ingredientes == null)
+                _Ingredientes = new EntitySet<Ingrediente>();
         }
     }
 }
