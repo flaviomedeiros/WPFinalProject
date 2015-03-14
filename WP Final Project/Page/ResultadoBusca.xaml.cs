@@ -86,7 +86,7 @@ namespace WP_Final_Project.Page
 
         public void verReceitaSelecionada()
         {
-            NavigationService.Navigate(new Uri("/Page/VerReceita.xaml", UriKind.Relative));
+            NavigationService.Navigate(new Uri("/Page/IngredientesReceita.xaml", UriKind.Relative));
         }
 
         private class ReceitaEncontrada
