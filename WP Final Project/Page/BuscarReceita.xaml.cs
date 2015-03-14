@@ -12,40 +12,75 @@ using WP_Final_Project.Resources.db;
 using WP_Final_Project.Resources.db.model;
 using System.Diagnostics;
 using WP_Final_Project.View;
+using System.Globalization;
 
 namespace WP_Final_Project
 {
-    public partial class MainPage : PhoneApplicationPage
+    public partial class BuscarReceita : PhoneApplicationPage
     {
-        // Constructor
-        public MainPage()
+        public BuscarReceita()
         {
             InitializeComponent();
-
             ListadeIngredientes.Children.Add(new ItemIngredienteBusca());
         }
 
         private void AdicionarIngrediente_Click(object sender, RoutedEventArgs e)
         {
-            ListadeIngredientes.Children.Add(new ItemIngredienteBusca());
+            if (verificaPreenchimentoDosIngredientes())
+            {
+                ListadeIngredientes.Children.Add(new ItemIngredienteBusca());
+            }
+            else
+            {
+                MessageBox.Show("Preencha todos os compos da lista de ingredientes");
+            }
         }
 
         private void PesquisarReceitas_Click(object sender, RoutedEventArgs e)
         {
-            NavigationService.Navigate(new Uri("/Page/ListaDeReceitas.xaml", UriKind.Relative));
+            if (verificaPreenchimentoDosIngredientes())
+            {
+                preencheListaDeIngredientes();
+                NavigationService.Navigate(new Uri("/Page/ListaDeReceitas.xaml", UriKind.Relative));
+            }
+            else
+            {
+                MessageBox.Show("Preencha todos os compos da lista de ingredientes");
+            }
         }
 
-        public void testeDb()
+        private bool verificaPreenchimentoDosIngredientes()
         {
-            Debug.WriteLine("testeDb!");
-            using (var db = new AppDataContext(AppDataContext.CN))
+            foreach (var children in ListadeIngredientes.Children)
             {
-                db.popularDb();
+                ItemIngredienteBusca ingrediente = children as ItemIngredienteBusca;
 
-                List<Produto> produtos = db.getAllProdutos();
-
-                Debug.WriteLine("produtos:" + produtos.Count);
+                if (ingrediente.NomeIngrediente.Text.Equals("") || ingrediente.QuantidadeIngrediente.Text.Equals(""))
+                {
+                    return false;
+                }
             }
+
+            return true;
+        }
+
+        private bool preencheListaDeIngredientes()
+        {
+            foreach (var children in ListadeIngredientes.Children)
+            {
+                ItemIngredienteBusca ingredienteView = children as ItemIngredienteBusca;
+
+                Produto produtoModel = new Produto();
+                produtoModel.Nome = ingredienteView.NomeIngrediente.Text;
+
+                Ingrediente ingredienteModel = new Ingrediente();
+                ingredienteModel.Produto = produtoModel;
+                ingredienteModel.Quantidade = float.Parse(ingredienteView.QuantidadeIngrediente.Text, CultureInfo.InvariantCulture.NumberFormat);
+
+                App.listaDeIngredientes.Add(ingredienteModel);
+            }
+
+            return true;
         }
     }
 }

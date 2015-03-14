@@ -16,6 +16,6 @@
         </Grid.ColumnDefinitions>
 
         <TextBox Grid.Column="0" x:Name="NomeIngrediente"/>
-        <TextBox Grid.Column="1" x:Name="QuantidadeIngrediente"/>
+        <TextBox Grid.Column="1" x:Name="QuantidadeIngrediente" InputScope="Number"/>
     </Grid>
 </UserControl>

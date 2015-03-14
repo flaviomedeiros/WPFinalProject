@@ -7,6 +7,8 @@ using System.Windows.Controls;
 using System.Windows.Navigation;
 using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
+using System.Text.RegularExpressions;
+using System.Windows.Input;
 
 namespace WP_Final_Project.View
 {
