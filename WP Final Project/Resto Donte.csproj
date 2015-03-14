@@ -98,8 +98,8 @@
     <Compile Include="Page\BuscarReceita.xaml.cs">
       <DependentUpon>BuscarReceita.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Page\ListaDeReceitas.xaml.cs">
-      <DependentUpon>ListaDeReceitas.xaml</DependentUpon>
+    <Compile Include="Page\ResultadoBusca.xaml.cs">
+      <DependentUpon>ResultadoBusca.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Resources\AppResources.Designer.cs">
@@ -112,6 +112,9 @@
     <Compile Include="Resources\db\model\Produto.cs" />
     <Compile Include="Resources\db\model\Receita.cs" />
     <Compile Include="Resources\db\model\Supermercado.cs" />
+    <Compile Include="View\ItemReceitaBusca.xaml.cs">
+      <DependentUpon>ItemReceitaBusca.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\ItemIngredienteBusca.xaml.cs">
       <DependentUpon>ItemIngredienteBusca.xaml</DependentUpon>
     </Compile>
@@ -125,11 +128,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Page\ListaDeReceitas.xaml">
+    <Page Include="View\ItemReceitaBusca.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\ItemIngredienteBusca.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\ItemIngredienteBusca.xaml">
+    <Page Include="Page\ResultadoBusca.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

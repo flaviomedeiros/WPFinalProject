@@ -22,6 +22,7 @@ namespace WP_Final_Project
         public static PhoneApplicationFrame RootFrame { get; private set; }
 
         public static List<Ingrediente> listaDeIngredientes;
+        public static Receita receitaSelecionada;
 
         /// <summary>
         /// Constructor for the Application object.

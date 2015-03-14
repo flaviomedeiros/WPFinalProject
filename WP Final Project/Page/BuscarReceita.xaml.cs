@@ -41,7 +41,7 @@ namespace WP_Final_Project
             if (verificaPreenchimentoDosIngredientes())
             {
                 preencheListaDeIngredientes();
-                NavigationService.Navigate(new Uri("/Page/ListaDeReceitas.xaml", UriKind.Relative));
+                NavigationService.Navigate(new Uri("/Page/ResultadoBusca.xaml", UriKind.Relative));
             }
             else
             {
