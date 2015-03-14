@@ -21,8 +21,9 @@ namespace WP_Final_Project
         /// <returns>The root frame of the Phone Application.</returns>
         public static PhoneApplicationFrame RootFrame { get; private set; }
 
-        public static List<Ingrediente> listaDeIngredientes;
+        public static AppDataContext db;
         public static Receita receitaSelecionada;
+        public static List<Ingrediente> listaDeIngredientes;
 
         /// <summary>
         /// Constructor for the Application object.
@@ -30,6 +31,7 @@ namespace WP_Final_Project
         public App()
         {
             listaDeIngredientes = new List<Ingrediente>();
+            db = new AppDataContext(AppDataContext.CN);
 
             // Global handler for uncaught exceptions.
             UnhandledException += Application_UnhandledException;
@@ -76,15 +78,12 @@ namespace WP_Final_Project
         // This code will not execute when the application is reactivated
         private void Application_Launching(object sender, LaunchingEventArgs e)
         {
-            using (AppDataContext db = new AppDataContext(AppDataContext.CN))
+            if (!db.DatabaseExists())
             {
-                if (!db.DatabaseExists())
-                {
-                    db.CreateDatabase();
-                }
-
-                db.popularDb();
+                db.CreateDatabase();
             }
+
+            db.popularDb();
         }
 
         // Code to execute when the application is activated (brought to foreground)

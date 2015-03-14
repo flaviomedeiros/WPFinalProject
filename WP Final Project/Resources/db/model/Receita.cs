@@ -20,6 +20,8 @@ namespace WP_Final_Project.Resources.db.model
         [Column()]
         public string Preparo { get; set; }
 
+        public List<Ingrediente> ingredientesLista;
+
         private EntitySet<Ingrediente> _Ingredientes;
 
         [Association(Storage = "_Ingredientes", ThisKey = "IdReceita", OtherKey = "IdReceita")]
@@ -28,6 +30,7 @@ namespace WP_Final_Project.Resources.db.model
             set
             {
                 _Ingredientes.Assign(value);
+                ingredientesLista = _Ingredientes.ToList();
             }
             get
             {
@@ -39,6 +42,9 @@ namespace WP_Final_Project.Resources.db.model
         {
             if (_Ingredientes == null)
                 _Ingredientes = new EntitySet<Ingrediente>();
+
+            if (ingredientesLista == null)
+                ingredientesLista = new List<Ingrediente>();
         }
     }
 }

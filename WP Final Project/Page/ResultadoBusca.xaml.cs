@@ -29,15 +29,12 @@ namespace WP_Final_Project.Page
             base.OnNavigatedTo(e);
             receitasEncontradas = new List<ReceitaEncontrada>();
 
-            using (var db = new AppDataContext(AppDataContext.CN))
+            foreach (Receita receita in App.db.getAllReceitas())
             {
-                foreach (Receita receita in db.getAllReceitas())
+                int compatibilidade = getReceitaCompatibilidade(receita);
+                if (compatibilidade > 0)
                 {
-                    int compatibilidade = getReceitaCompatibilidade(receita);
-                    if (compatibilidade > 0)
-                    {
-                        receitasEncontradas.Add(new ReceitaEncontrada(receita, compatibilidade));
-                    }
+                    receitasEncontradas.Add(new ReceitaEncontrada(receita, compatibilidade));
                 }
             }
 

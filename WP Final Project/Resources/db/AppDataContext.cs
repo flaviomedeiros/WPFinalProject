@@ -33,27 +33,39 @@ namespace WP_Final_Project.Resources.db
 
             Produto p1 = new Produto("Farinha", 10.5f, "Da marca da vovo");
             Produto p2 = new Produto("Chocolate em po", 5.99f, "Doce como a vida");
+            Produto p3 = new Produto("Ovo", 4.99f, "De granja");
+            Produto p4 = new Produto("Manteiga", 4.99f, "Light");
 
             add(p1);
             add(p2);
+            add(p3);
+            add(p4);
 
             Ingrediente i1 = new Ingrediente(p1, 1f);
             Ingrediente i2 = new Ingrediente(p2, 2f);
+            Ingrediente i3 = new Ingrediente(p3, 3f);
+            Ingrediente i4 = new Ingrediente(p4, 4f);
+            Ingrediente i5 = new Ingrediente(p1, 8f);
 
             add(i1);
             add(i2);
-            
+            add(i3);
+            add(i4);
+            add(i5);
+
             Receita r1 = new Receita();
+            r1.Nome = "Bolo";
             r1.Ingredientes.Add(i1);
 
             Receita r2 = new Receita();
-            r2.Ingredientes.Add(i1);
+            r2.Nome = "Doce";
+            r2.Ingredientes.Add(i5);
             r2.Ingredientes.Add(i2);
 
             add(r1);
             add(r2);
 
-            teste();
+            //teste();
         }
 
         public void teste()
