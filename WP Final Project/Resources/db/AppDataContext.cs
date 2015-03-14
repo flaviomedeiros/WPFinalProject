@@ -70,6 +70,7 @@ namespace WP_Final_Project.Resources.db
             r1.Nome = "Doce de chocolate";
             r1.Ingredientes.Add(i2);
             r1.Ingredientes.Add(i6);
+            r1.Preparo = "Junte tudo, mexa um pouco e pronto!\nColeque no forno ate queimar.";
 
             Receita r2 = new Receita();
             r2.Nome = "Bolo";
@@ -77,17 +78,20 @@ namespace WP_Final_Project.Resources.db
             r2.Ingredientes.Add(i2);
             r2.Ingredientes.Add(i3);
             r2.Ingredientes.Add(i4);
+            r2.Preparo = "Junte tudo, mexa um pouco e pronto!\nColeque no forno ate queimar.\nVai ser um super bolo";
 
             Receita r3 = new Receita();
             r3.Nome = "Picole";
             r3.Ingredientes.Add(i2);
             r3.Ingredientes.Add(i7);
             r3.Ingredientes.Add(i8);
+            r3.Preparo = "Junte tudo, mexa um pouco e pronto!\nColeque no forno ate queimar.\nO resultado eh uma palheta mexicana";
 
             Receita r4 = new Receita();
             r4.Nome = "Cocada suprema";
             r4.Ingredientes.Add(i7);
             r4.Ingredientes.Add(i9);
+            r4.Preparo = "Junte tudo, mexa um pouco e pronto!\nColeque no forno ate queimar.\nO mlehor do mundo";
 
             add(r1);
             add(r2);
@@ -112,6 +116,7 @@ namespace WP_Final_Project.Resources.db
             s2.Produtos.Add(p3);
             s2.Produtos.Add(p4);
             s2.Produtos.Add(p5);
+            s2.Produtos.Add(p7);
 
             add(s1);
             add(s2);
