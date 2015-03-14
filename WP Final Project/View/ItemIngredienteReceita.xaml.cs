@@ -43,7 +43,7 @@ namespace WP_Final_Project.View
             }
             else
             {
-                NomeIngrediente.Foreground = new SolidColorBrush(System.Windows.Media.Colors.Black);
+                NomeIngrediente.Foreground = new SolidColorBrush(System.Windows.Media.Colors.White);
                 SupermercadoMaisProximo.Visibility = System.Windows.Visibility.Collapsed;
             }
         }
