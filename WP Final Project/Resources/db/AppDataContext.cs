@@ -10,7 +10,7 @@ namespace WP_Final_Project.Resources.db
 {
     public class AppDataContext : DataContext
     {
-        public static string CN = "isostore:/resto.sdf";
+        public static string CN = "isostore:/resto3.sdf";
 
         public Table<Produto> mProduto;
         public Table<Supermercado> mSupermercado;
@@ -19,29 +19,39 @@ namespace WP_Final_Project.Resources.db
 
         public AppDataContext(string cn) : base(cn)
         {
-
+            /*if (!DatabaseExists())
+            {
+                CreateDatabase();
+            }*/
         }
 
         public void popularDb()
         {
-            //removeAll();
-            if(getAllProdutos().Count == 0)
-            {
-                Produto prod1 = new Produto("Farinha", 10.5f);
-                Produto prod2 = new Produto("Arroz", 5.99f);
-                add(prod1);
-                add(prod2);
-                Receita receita1 = new Receita();
-                add(receita1);
-            }
+            if (getAllProdutos().Count > 0)
+                removeAll();
+
+            Produto p1 = new Produto("Farinha", 10.5f, "Da marca da vovo");
+            Produto p2 = new Produto("Chocolate em po", 5.99f, "Doce como a vida");
+
+            add(p1);
+            add(p2);
+
+            Ingrediente i1 = new Ingrediente(p1, 2f);
+
+            add(i1);
         }
 
         private void removeAll()
         {
-            mProduto.DeleteAllOnSubmit(mProduto);
-            mReceita.DeleteAllOnSubmit(mReceita);
-            mSupermercado.DeleteAllOnSubmit(mSupermercado);
-            mIngrediente.DeleteAllOnSubmit(mIngrediente);
+            var deleteProduto = from p in mProduto select p;
+            var deleteReceita = from r in mReceita select r;
+            var deleteSupermercado = from s in mSupermercado select s;
+            var deleteIngrediente = from i in mIngrediente select i;
+
+            mProduto.DeleteAllOnSubmit(deleteProduto);
+            mReceita.DeleteAllOnSubmit(deleteReceita);
+            mSupermercado.DeleteAllOnSubmit(deleteSupermercado);
+            mIngrediente.DeleteAllOnSubmit(deleteIngrediente);
         }
 
         //getAll

@@ -7,11 +7,17 @@ using System.Data.Linq.Mapping;
 
 namespace WP_Final_Project.Resources.db.model
 {
-    [Table]
+    [Table(Name = "Produto")]
     public class Produto
     {
+        [Column()]
+        public int IdIngrediente { get; set; }
+
+        [Column()]
+        public int IdSupermercado { get; set; }
+
         [Column(IsDbGenerated = true, IsPrimaryKey = true)]
-        public int Id { get; set; }
+        public int IdProduto { get; set; }
 
         [Column()]
         public string Nome { get; set; }
@@ -19,15 +25,19 @@ namespace WP_Final_Project.Resources.db.model
         [Column()]
         public float Preco { get; set; }
 
+        [Column()]
+        public string Descricao { get; set; }
+
         public Produto()
         {
             
         }
 
-        public Produto(string nome, float preco)
+        public Produto(string nome, float preco, string descricao)
         {
             Nome = nome;
             Preco = preco;
+            Descricao = descricao;
         }
     }
 }
