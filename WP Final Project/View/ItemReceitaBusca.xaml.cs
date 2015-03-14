@@ -16,12 +16,12 @@ namespace WP_Final_Project.View
     {
         private Receita mReceita;
 
-        public ItemReceitaBusca(Resources.db.model.Receita receita, int compatibilidade)
+        public ItemReceitaBusca(Resources.db.model.Receita receita, float compatibilidade)
         {
             InitializeComponent();
             mReceita = receita;
             NomeReceita.Text = receita.Nome;
-            Compatibilidade.Text = compatibilidade + "%";
+            Compatibilidade.Text = (int) compatibilidade + "%";
         }
 
         private void LayoutRoot_Tap(object sender, System.Windows.Input.GestureEventArgs e)

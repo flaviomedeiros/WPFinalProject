@@ -22,7 +22,7 @@ namespace WP_Final_Project.View
         {
             InitializeComponent();
             this.ingrediente = ingrediente;
-            NomeIngrediente.Text = ingrediente.Produto.Nome;
+            NomeIngrediente.Text = ingrediente.Quantidade + " x " + ingrediente.Produto.Nome;
         }
         
         private void LayoutRoot_Tap(object sender, System.Windows.Input.GestureEventArgs e)
@@ -31,7 +31,7 @@ namespace WP_Final_Project.View
             IngredientesReceita.instance.verIngredienteSelecionado();
         }
 
-        private void CheckPossuo_Checked(object sender, RoutedEventArgs e)
+        private void CheckPossuo_Tap(object sender, RoutedEventArgs e)
         {
             if (CheckPossuo.IsChecked.Value)
             {

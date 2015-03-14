@@ -31,7 +31,7 @@ namespace WP_Final_Project.Page
 
             foreach (Receita receita in App.db.getAllReceitas())
             {
-                int compatibilidade = getReceitaCompatibilidade(receita);
+                float compatibilidade = getReceitaCompatibilidade(receita);
                 if (compatibilidade > 0)
                 {
                     receitasEncontradas.Add(new ReceitaEncontrada(receita, compatibilidade));
@@ -47,10 +47,11 @@ namespace WP_Final_Project.Page
             ListaDeReceitas.Children.Clear();
         }
         
-        private int getReceitaCompatibilidade(Receita receita)
+        private float getReceitaCompatibilidade(Receita receita)
         {
-            int compatibilidade = 0;
+            float compatibilidade = 0;
             int compatibilidadePesoPorIngrediente = 100 / App.listaDeIngredientes.Count;
+            int qtdDeIngredientesNaReceita = getQtdDeIngredientesNaReceita(receita);
             //Calc compatibilidade por ingrediente
             foreach (Ingrediente ingrediente in App.listaDeIngredientes)
             {
@@ -59,18 +60,28 @@ namespace WP_Final_Project.Page
                 {
                     compatibilidade += compatibilidadePesoPorIngrediente;
                     //Calc compatibilidade da quantidade
-                    float difQt = ingrediente.Quantidade - ingredienteNaReceita.Quantidade;
+                    float difQt = ingredienteNaReceita.Quantidade - ingrediente.Quantidade;
                     int difQtAbsRounded = (int) Math.Round(Math.Abs(difQt));
-                    compatibilidade -= difQtAbsRounded;
+                    compatibilidade -= difQtAbsRounded / ingredienteNaReceita.Quantidade * 100;
                 }
             }
             return compatibilidade;
         }
 
+        private int getQtdDeIngredientesNaReceita(Receita receita)
+        {
+            int qtd = 0;
+            foreach (Ingrediente ingrediente in receita.Ingredientes)
+            {
+                qtd += (int) ingrediente.Quantidade;
+            }
+            return qtd;
+        }
+
         private Ingrediente getIngredienteNaReceita(Receita receita, Ingrediente ingrediente)
         {
             foreach(Ingrediente ingredienteReceita in receita.Ingredientes){
-                if (ingredienteReceita.Produto.Nome.Equals(ingrediente.Produto.Nome))
+                if (ingredienteReceita.Produto.Nome.ToLower().Contains(ingrediente.Produto.Nome.ToLower()))
                 {
                     return ingredienteReceita;
                 }
@@ -85,7 +96,7 @@ namespace WP_Final_Project.Page
             foreach (ReceitaEncontrada receitaEncontrada in receitasOrdenada)
             {
                 Receita receita = receitaEncontrada.receita;
-                int compatibilidade = receitaEncontrada.compatibilidade;
+                float compatibilidade = receitaEncontrada.compatibilidade;
                 ListaDeReceitas.Children.Add(new ItemReceitaBusca(receita, compatibilidade));
             }
         }
@@ -98,9 +109,9 @@ namespace WP_Final_Project.Page
         private class ReceitaEncontrada
         {
             public Receita receita;
-            public int compatibilidade;
+            public float compatibilidade;
 
-            public ReceitaEncontrada(Receita receita, int compatibilidade)
+            public ReceitaEncontrada(Receita receita, float compatibilidade)
             {
                 this.receita = receita;
                 this.compatibilidade = compatibilidade;

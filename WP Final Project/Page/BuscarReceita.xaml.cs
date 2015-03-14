@@ -66,6 +66,7 @@ namespace WP_Final_Project
 
         private bool preencheListaDeIngredientes()
         {
+            App.listaDeIngredientes.Clear();
             foreach (var children in ListadeIngredientes.Children)
             {
                 ItemIngredienteBusca ingredienteView = children as ItemIngredienteBusca;
