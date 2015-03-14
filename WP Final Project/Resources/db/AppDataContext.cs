@@ -31,39 +31,90 @@ namespace WP_Final_Project.Resources.db
             if (getAllProdutos().Count > 0)
                 removeAll();
 
-            Produto p1 = new Produto("Farinha", 10.5f, "Da marca da vovo");
-            Produto p2 = new Produto("Chocolate em po", 5.99f, "Doce como a vida");
-            Produto p3 = new Produto("Ovo", 4.99f, "De granja");
-            Produto p4 = new Produto("Manteiga", 4.99f, "Light");
+            Produto p1 = new Produto("Farinha", 10.5f, "1kg. Da marca da vovo");
+            Produto p2 = new Produto("Chocolate em po", 5.99f, "1kg. Doce como a vida");
+            Produto p3 = new Produto("Ovo", 4.99f, "12unit. De granja");
+            Produto p4 = new Produto("Manteiga", 4.99f, "500g. Light");
+            Produto p5 = new Produto("Agua", 2.99f, "1L. Indaia");
+            Produto p6 = new Produto("Leite", 6.99f, "1L. Betania");
+            Produto p7 = new Produto("Coco", 223.75f, "Colhido por freiras cegas das montanhas");
 
             add(p1);
             add(p2);
             add(p3);
             add(p4);
+            add(p5);
+            add(p6);
 
             Ingrediente i1 = new Ingrediente(p1, 1f);
             Ingrediente i2 = new Ingrediente(p2, 2f);
-            Ingrediente i3 = new Ingrediente(p3, 3f);
+            Ingrediente i3 = new Ingrediente(p3, 1f);
             Ingrediente i4 = new Ingrediente(p4, 4f);
             Ingrediente i5 = new Ingrediente(p1, 8f);
+            Ingrediente i6 = new Ingrediente(p1, 3f);
+            Ingrediente i7 = new Ingrediente(p5, 2f);
+            Ingrediente i8 = new Ingrediente(p6, 3f);
+            Ingrediente i9 = new Ingrediente(p7, 2f);
 
             add(i1);
             add(i2);
             add(i3);
             add(i4);
             add(i5);
+            add(i6);
+            add(i7);
+            add(i8);
+            add(i9);
 
             Receita r1 = new Receita();
-            r1.Nome = "Bolo";
-            r1.Ingredientes.Add(i1);
+            r1.Nome = "Doce de chocolate";
+            r1.Ingredientes.Add(i2);
+            r1.Ingredientes.Add(i6);
 
             Receita r2 = new Receita();
-            r2.Nome = "Doce";
+            r2.Nome = "Bolo";
             r2.Ingredientes.Add(i5);
             r2.Ingredientes.Add(i2);
+            r2.Ingredientes.Add(i3);
+            r2.Ingredientes.Add(i4);
+
+            Receita r3 = new Receita();
+            r3.Nome = "Picole";
+            r3.Ingredientes.Add(i2);
+            r3.Ingredientes.Add(i7);
+            r3.Ingredientes.Add(i8);
+
+            Receita r4 = new Receita();
+            r4.Nome = "Cocada suprema";
+            r4.Ingredientes.Add(i7);
+            r4.Ingredientes.Add(i9);
 
             add(r1);
             add(r2);
+            add(r3);
+            add(r4);
+
+            Supermercado s1 = new Supermercado();
+            s1.Nome = "Cometa";
+            s1.Latitude = 10;
+            s1.Longitude = 25;
+            s1.Produtos.Add(p1);
+            s1.Produtos.Add(p2);
+            s1.Produtos.Add(p3);
+            s1.Produtos.Add(p4);
+            s1.Produtos.Add(p5);
+
+            Supermercado s2 = new Supermercado();
+            s2.Nome = "Pao de acucar";
+            s2.Latitude = 50;
+            s2.Longitude = 75;
+            s2.Produtos.Add(p6);
+            s2.Produtos.Add(p3);
+            s2.Produtos.Add(p4);
+            s2.Produtos.Add(p5);
+
+            add(s1);
+            add(s2);
 
             //teste();
         }
