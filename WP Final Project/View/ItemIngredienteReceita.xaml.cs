@@ -11,6 +11,8 @@ using System.Text.RegularExpressions;
 using System.Windows.Input;
 using WP_Final_Project.Resources.db.model;
 using WP_Final_Project.Page;
+using Windows.UI;
+using System.Windows.Media;
 
 namespace WP_Final_Project.View
 {
@@ -35,11 +37,13 @@ namespace WP_Final_Project.View
         {
             if (CheckPossuo.IsChecked.Value)
             {
+                NomeIngrediente.Foreground = new SolidColorBrush(System.Windows.Media.Colors.Red);
                 SupermercadoMaisProximo.Visibility = System.Windows.Visibility.Visible;
                 SupermercadoMaisProximo.Text = getNomeSupermercadoMaisProximo();
             }
             else
             {
+                NomeIngrediente.Foreground = new SolidColorBrush(System.Windows.Media.Colors.Black);
                 SupermercadoMaisProximo.Visibility = System.Windows.Visibility.Collapsed;
             }
         }

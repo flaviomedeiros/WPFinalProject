@@ -26,7 +26,7 @@ namespace WP_Final_Project.Page
             {
                 if (supermercado.Produtos.ToList().Contains(App.ingredienteSelecionado.Produto))
                 {
-                    ListaDeSupermercados.Text += ListaDeSupermercados.Text + "\n" + supermercado.Nome;
+                    ListaDeSupermercados.Text += "\n" + supermercado.Nome;
                 }
             }
         }

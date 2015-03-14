@@ -47,9 +47,11 @@
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
                 <Button Grid.Column="0" x:Name="AdicionarIngrediente" Content="Add ingrediente" Click="AdicionarIngrediente_Click"/>
                 <Button Grid.Column="1" x:Name="PesquisarReceitas" Content="Pesquisar" Click="PesquisarReceitas_Click"/>
+                <Button Grid.Column="2" x:Name="LimparIngrediente" Content="Limpar" Click="Limpar_Click"/>
             </Grid>
         </Grid>
     </Grid>

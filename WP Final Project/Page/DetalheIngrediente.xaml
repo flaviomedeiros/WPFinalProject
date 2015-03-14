@@ -24,9 +24,9 @@
 
         <ScrollViewer  Grid.Row="1" VerticalAlignment="Top">
             <StackPanel>
-                <TextBlock Text="- Nome" FontSize="30"/>
+                <TextBlock Text="Nome:" FontSize="30"/>
                 <TextBlock x:Name="NomeIngrediente" FontSize="20"/>
-                <TextBlock Text="- Destalhes" FontSize="30"/>
+                <TextBlock Text="Detalhes:" FontSize="30"/>
                 <RichTextBox >
                     <Paragraph>
                         <Run x:Name="DescritivoIngrediente" FontSize="25"/>
@@ -38,7 +38,7 @@
         <Grid Grid.Row="2" >
             <ScrollViewer  >
                 <StackPanel>
-                    <TextBlock Text="- Disponível nos supermercados" FontSize="30"/>
+                    <TextBlock Text="Disponível nos supermercados:" FontSize="30"/>
                     <TextBlock x:Name="ListaDeSupermercados" FontSize="20"/>
                 </StackPanel>
             </ScrollViewer>

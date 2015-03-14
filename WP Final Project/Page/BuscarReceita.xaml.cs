@@ -49,6 +49,13 @@ namespace WP_Final_Project
             }
         }
 
+        private void Limpar_Click(object sender, RoutedEventArgs e)
+        {
+            ListadeIngredientes.Children.Clear();
+            ListadeIngredientes.Children.Add(new ItemIngredienteBusca());
+
+        }
+
         private bool verificaPreenchimentoDosIngredientes()
         {
             foreach (var children in ListadeIngredientes.Children)

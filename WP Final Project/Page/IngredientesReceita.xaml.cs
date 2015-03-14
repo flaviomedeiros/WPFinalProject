@@ -23,15 +23,10 @@ namespace WP_Final_Project.Page
             instance = this;
         }
 
-        protected override void OnNavigatedFrom(NavigationEventArgs e)
-        {
-            base.OnNavigatedFrom(e);
-            ListaDeIngredientes.Children.Clear();
-        }
-        
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
             base.OnNavigatedTo(e);
+            receitaDesc.Text = App.receitaSelecionada.Preparo;
             foreach (Ingrediente ingrediente in App.receitaSelecionada.Ingredientes) 
             {
                 ItemIngredienteReceita itemIngredienteReceita = new ItemIngredienteReceita(ingrediente);
@@ -39,6 +34,12 @@ namespace WP_Final_Project.Page
             }
         }
 
+        protected override void OnNavigatedFrom(NavigationEventArgs e)
+        {
+            base.OnNavigatedFrom(e);
+            ListaDeIngredientes.Children.Clear();
+        }
+        
         public void verIngredienteSelecionado()
         {
             NavigationService.Navigate(new Uri("/Page/DetalheIngrediente.xaml", UriKind.Relative));
