@@ -17,6 +17,7 @@ namespace WP_Final_Project.Page
         {
             InitializeComponent();
 
+            NomeIngrediente.Text = App.ingredienteSelecionado.Produto.Nome;
             DescritivoIngrediente.Text = App.ingredienteSelecionado.Produto.Descricao;
 
             List<Supermercado> supermercados = App.db.getAllSupermercados();

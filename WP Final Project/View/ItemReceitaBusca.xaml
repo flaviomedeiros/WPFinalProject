@@ -11,11 +11,16 @@
 
     <Grid x:Name="LayoutRoot" Tap="LayoutRoot_Tap">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="10*"/>
-            <ColumnDefinition Width="80*"/>
+            <ColumnDefinition Width="60*"/>
+            <ColumnDefinition Width="40*"/>
         </Grid.ColumnDefinitions>
 
-        <TextBlock Grid.Column="0" x:Name="Compatibilidade" Text="100%" Margin="10 0 0 0"/>
-        <TextBlock Grid.Column="1" x:Name="NomeReceita" Text="Receita" Margin="20 0 0 0"/>
+        <TextBlock Grid.Column="0" x:Name="Compatibilidade" Text="100%" Margin="10 0 0 0" VerticalAlignment="Center" FontSize="25"/>
+        <RichTextBox Grid.Column="1">
+            <Paragraph>
+                <Run x:Name="NomeReceita" FontSize="25"/>
+            </Paragraph>
+        </RichTextBox>
+
     </Grid>
 </UserControl>

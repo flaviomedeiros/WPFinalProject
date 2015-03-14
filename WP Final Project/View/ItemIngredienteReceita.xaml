@@ -16,8 +16,8 @@
             <ColumnDefinition Width="30*"/>
         </Grid.ColumnDefinitions>
 
-        <CheckBox Grid.Column="0" x:Name="CheckPossuo" Checked="CheckPossuo_Checked"/>
-        <TextBlock Grid.Column="1" x:Name="NomeIngrediente" Tap="LayoutRoot_Tap"/>
-        <TextBlock Grid.Column="2" x:Name="SupermercadoMaisProximo" Visibility="Collapsed" Tap="LayoutRoot_Tap"/>
+        <CheckBox Grid.Column="0" x:Name="CheckPossuo" Checked="CheckPossuo_Checked" VerticalAlignment="Center"/>
+        <TextBlock Grid.Column="1" x:Name="NomeIngrediente" Tap="LayoutRoot_Tap" VerticalAlignment="Center"/>
+        <TextBlock Grid.Column="2" x:Name="SupermercadoMaisProximo" Visibility="Collapsed" Tap="LayoutRoot_Tap" VerticalAlignment="Center"/>
     </Grid>
 </UserControl>

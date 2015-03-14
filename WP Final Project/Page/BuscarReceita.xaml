@@ -15,20 +15,20 @@
 
     <Grid Margin="12">
         <Grid.RowDefinitions>
-            <RowDefinition Height="5*"/>
+            <RowDefinition Height="10*"/>
             <RowDefinition Height="4*"/>
-            <RowDefinition Height="91*"/>
+            <RowDefinition Height="81*"/>
         </Grid.RowDefinitions>
 
-        <TextBlock Grid.Row="0" Text="Pesquisar receitas" Margin="12, 0, 0, 0" FontSize="30"/>
+        <TextBlock Grid.Row="0" Text="Pesquisar receitas" FontSize="50"/>
 
         <Grid Grid.Row="1" Margin="12, 0, 0, -10">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="80*"/>
                 <ColumnDefinition Width="20*"/>
             </Grid.ColumnDefinitions>
-            <TextBlock Grid.Column="0" Text="Ingrediente"/>
-            <TextBlock Grid.Column="1" Text="Quant."/>
+            <TextBlock Grid.Column="0" Text="Ingrediente" FontSize="20"/>
+            <TextBlock Grid.Column="1" Text="Quant." FontSize="20"/>
         </Grid>
 
         <Grid Grid.Row="2">
