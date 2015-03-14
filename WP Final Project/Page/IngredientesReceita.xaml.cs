@@ -35,7 +35,7 @@ namespace WP_Final_Project.Page
 
         public void verIngredienteSelecionado()
         {
-            NavigationService.Navigate(new Uri("/Page/VerIngrediente.xaml", UriKind.Relative));
+            NavigationService.Navigate(new Uri("/Page/DetalheIngrediente.xaml", UriKind.Relative));
         }
 
     }

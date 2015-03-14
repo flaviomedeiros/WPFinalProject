@@ -9,7 +9,7 @@
     Foreground="{StaticResource PhoneForegroundBrush}"
     Height="70" >
 
-    <Grid x:Name="LayoutRoot">
+    <Grid x:Name="LayoutRoot" Tap="LayoutRoot_Tap">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="20*"/>
             <ColumnDefinition Width="80*"/>

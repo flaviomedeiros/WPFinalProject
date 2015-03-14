@@ -24,6 +24,7 @@ namespace WP_Final_Project
         public static AppDataContext db;
         public static Receita receitaSelecionada;
         public static List<Ingrediente> listaDeIngredientes;
+        public static Ingrediente ingredienteSelecionado;
 
         /// <summary>
         /// Constructor for the Application object.

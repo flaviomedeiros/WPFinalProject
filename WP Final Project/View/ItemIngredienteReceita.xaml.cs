@@ -16,14 +16,19 @@ namespace WP_Final_Project.View
 {
     public partial class ItemIngredienteReceita : UserControl
     {
+        private Ingrediente ingrediente;
+
         public ItemIngredienteReceita(Ingrediente ingrediente)
         {
             InitializeComponent();
+            this.ingrediente = ingrediente;
+
             NomeIngrediente.Text = ingrediente.Produto.Nome;
         }
         
         private void LayoutRoot_Tap(object sender, System.Windows.Input.GestureEventArgs e)
         {
+            App.ingredienteSelecionado = ingrediente;
             IngredientesReceita.instance.verIngredienteSelecionado();
         }
 

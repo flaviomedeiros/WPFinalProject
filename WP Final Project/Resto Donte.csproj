@@ -98,6 +98,9 @@
     <Compile Include="Page\BuscarReceita.xaml.cs">
       <DependentUpon>BuscarReceita.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Page\DetalheIngrediente.xaml.cs">
+      <DependentUpon>DetalheIngrediente.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Page\IngredientesReceita.xaml.cs">
       <DependentUpon>IngredientesReceita.xaml</DependentUpon>
     </Compile>
@@ -133,6 +136,10 @@
     <Page Include="Page\BuscarReceita.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Page\DetalheIngrediente.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="Page\IngredientesReceita.xaml">
       <Generator>MSBuild:Compile</Generator>
