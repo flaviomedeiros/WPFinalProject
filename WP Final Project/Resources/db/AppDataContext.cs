@@ -25,13 +25,14 @@ namespace WP_Final_Project.Resources.db
         public void popularDb()
         {
             //removeAll();
-
             if(getAllProdutos().Count == 0)
             {
-                add(new Produto("Farinha", 10.5f));
-                add(new Produto("Arroz", 5.99f));
-
-                
+                Produto prod1 = new Produto("Farinha", 10.5f);
+                Produto prod2 = new Produto("Arroz", 5.99f);
+                add(prod1);
+                add(prod2);
+                Receita receita1 = new Receita();
+                add(receita1);
             }
         }
 
