@@ -11,6 +11,7 @@ using WP_Final_Project.Resources;
 using WP_Final_Project.Resources.db;
 using WP_Final_Project.Resources.db.model;
 using System.Diagnostics;
+using WP_Final_Project.View;
 
 namespace WP_Final_Project
 {
@@ -21,9 +22,17 @@ namespace WP_Final_Project
         {
             InitializeComponent();
 
-            // Sample code to localize the ApplicationBar
-            //BuildLocalizedApplicationBar();
-            testeDb();
+            ListadeIngredientes.Children.Add(new ItemIngredienteBusca());
+        }
+
+        private void AdicionarIngrediente_Click(object sender, RoutedEventArgs e)
+        {
+            ListadeIngredientes.Children.Add(new ItemIngredienteBusca());
+        }
+
+        private void PesquisarReceitas_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new Uri("/Page/ListaDeReceitas.xaml", UriKind.Relative));
         }
 
         public void testeDb()

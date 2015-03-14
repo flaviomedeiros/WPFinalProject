@@ -8,6 +8,8 @@ using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
 using WP_Final_Project.Resources;
 using WP_Final_Project.Resources.db;
+using WP_Final_Project.Resources.db.model;
+using System.Collections.Generic;
 
 namespace WP_Final_Project
 {
@@ -19,11 +21,15 @@ namespace WP_Final_Project
         /// <returns>The root frame of the Phone Application.</returns>
         public static PhoneApplicationFrame RootFrame { get; private set; }
 
+        public static List<Ingrediente> listaDeIngredientes;
+
         /// <summary>
         /// Constructor for the Application object.
         /// </summary>
         public App()
         {
+            listaDeIngredientes = new List<Ingrediente>();
+
             // Global handler for uncaught exceptions.
             UnhandledException += Application_UnhandledException;
 
