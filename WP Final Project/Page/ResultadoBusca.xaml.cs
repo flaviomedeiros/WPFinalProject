@@ -40,6 +40,12 @@ namespace WP_Final_Project.Page
 
             ordenarEExibirResultado();
         }
+
+        protected override void OnNavigatedFrom(NavigationEventArgs e)
+        {
+            base.OnNavigatedFrom(e);
+            ListaDeReceitas.Children.Clear();
+        }
         
         private int getReceitaCompatibilidade(Receita receita)
         {
@@ -76,7 +82,6 @@ namespace WP_Final_Project.Page
         {
             List<ReceitaEncontrada> receitasOrdenada = receitasEncontradas.OrderBy(o => o.compatibilidade).ToList();
             receitasOrdenada.Reverse();
-            ListaDeReceitas.Children.Clear();
             foreach (ReceitaEncontrada receitaEncontrada in receitasOrdenada)
             {
                 Receita receita = receitaEncontrada.receita;

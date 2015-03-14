@@ -9,15 +9,15 @@
     Foreground="{StaticResource PhoneForegroundBrush}"
     Height="70" >
 
-    <Grid x:Name="LayoutRoot" Tap="LayoutRoot_Tap">
+    <Grid x:Name="LayoutRoot">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="10*"/>
-            <ColumnDefinition Width="50*"/>
+            <ColumnDefinition Width="20*"/>
             <ColumnDefinition Width="40*"/>
+            <ColumnDefinition Width="30*"/>
         </Grid.ColumnDefinitions>
 
         <CheckBox Grid.Column="0" x:Name="CheckPossuo" Checked="CheckPossuo_Checked"/>
-        <TextBlock Grid.Column="1" x:Name="NomeIngrediente"/>
-        <TextBlock Grid.Column="2" x:Name="SupermercadoMaisProximo" Visibility="Collapsed"/>
+        <TextBlock Grid.Column="1" x:Name="NomeIngrediente" Tap="LayoutRoot_Tap"/>
+        <TextBlock Grid.Column="2" x:Name="SupermercadoMaisProximo" Visibility="Collapsed" Tap="LayoutRoot_Tap"/>
     </Grid>
 </UserControl>

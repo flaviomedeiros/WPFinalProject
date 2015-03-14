@@ -16,6 +16,6 @@
         </Grid.ColumnDefinitions>
 
         <TextBlock Grid.Column="0" x:Name="Compatibilidade" Text="100%" Margin="10 0 0 0"/>
-        <TextBlock Grid.Column="1" x:Name="NomeReceita" Text="Receita" Margin="20 0 0 0">
+        <TextBlock Grid.Column="1" x:Name="NomeReceita" Text="Receita" Margin="20 0 0 0"/>
     </Grid>
 </UserControl>

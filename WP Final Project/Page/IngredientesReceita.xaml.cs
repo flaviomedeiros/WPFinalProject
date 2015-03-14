@@ -23,6 +23,12 @@ namespace WP_Final_Project.Page
             instance = this;
         }
 
+        protected override void OnNavigatedFrom(NavigationEventArgs e)
+        {
+            base.OnNavigatedFrom(e);
+            ListaDeIngredientes.Children.Clear();
+        }
+        
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
             base.OnNavigatedTo(e);
