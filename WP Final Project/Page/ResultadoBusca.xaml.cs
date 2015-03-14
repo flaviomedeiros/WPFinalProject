@@ -57,22 +57,34 @@ namespace WP_Final_Project.Page
             //Calc compatibilidade por ingrediente
             foreach (Ingrediente ingrediente in App.listaDeIngredientes)
             {
-                if (receita.Ingredientes.Contains(ingrediente))
+                Ingrediente ingredienteNaReceita = getIngredienteNaReceita(receita, ingrediente);
+                if (ingredienteNaReceita != null)
                 {
                     compatibilidade += compatibilidadePesoPorIngrediente;
+                    //Calc compatibilidade da quantidade
+                    float difQt = ingrediente.Quantidade - ingredienteNaReceita.Quantidade;
+                    int difQtAbsRounded = (int) Math.Round(Math.Abs(difQt));
+                    compatibilidade -= difQtAbsRounded;
                 }
             }
-            //Calc compatibilidade
-            /*foreach (Ingrediente ingrediente in App.listaDeIngredientes)
-            {
-
-            }*/
             return compatibilidade;
+        }
+
+        private Ingrediente getIngredienteNaReceita(Receita receita, Ingrediente ingrediente)
+        {
+            foreach(Ingrediente ingredienteReceita in receita.Ingredientes){
+                if (ingredienteReceita.Produto.Nome.Equals(ingrediente.Produto.Nome))
+                {
+                    return ingredienteReceita;
+                }
+            }
+            return null;
         }
 
         private void ordenarEExibirResultado()
         {
             List<ReceitaEncontrada> receitasOrdenada = receitasEncontradas.OrderBy(o => o.compatibilidade).ToList();
+            receitasOrdenada.Reverse();
             foreach (ReceitaEncontrada receitaEncontrada in receitasOrdenada)
             {
                 Receita receita = receitaEncontrada.receita;

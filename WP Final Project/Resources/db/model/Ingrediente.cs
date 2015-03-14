@@ -46,5 +46,11 @@ namespace WP_Final_Project.Resources.db.model
             Quantidade = quantidade;
             Produto = produto;
         }
+
+        public override bool Equals(Ingrediente i)
+        {
+            return Produto.Nome.Equals(i.Produto.Nome);
+        }
+
     }
 }
