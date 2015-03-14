@@ -22,7 +22,6 @@ namespace WP_Final_Project.View
         {
             InitializeComponent();
             this.ingrediente = ingrediente;
-
             NomeIngrediente.Text = ingrediente.Produto.Nome;
         }
         
@@ -30,6 +29,58 @@ namespace WP_Final_Project.View
         {
             App.ingredienteSelecionado = ingrediente;
             IngredientesReceita.instance.verIngredienteSelecionado();
+        }
+
+        private void CheckPossuo_Checked(object sender, RoutedEventArgs e)
+        {
+            if (CheckPossuo.IsChecked.Value)
+            {
+                SupermercadoMaisProximo.Visibility = System.Windows.Visibility.Visible;
+                SupermercadoMaisProximo.Text = getNomeSupermercadoMaisProximo();
+            }
+            else
+            {
+                SupermercadoMaisProximo.Visibility = System.Windows.Visibility.Collapsed;
+            }
+        }
+
+        private string getNomeSupermercadoMaisProximo()
+        {
+            String supermercadoNome = "";
+            List<Supermercado> supermercadosComProduto = getSuperMercadosComProduto();
+            int myLat = (int)(new Random().NextDouble() * 180);
+            int myLon = (int)(new Random().NextDouble() * 360);
+            //calcula supermercado mais proximo
+            int distMaisProximo = int.MaxValue;
+            foreach (Supermercado supermercado in supermercadosComProduto)
+            {
+                int dist = (int) Math.Sqrt(Math.Pow(supermercado.Latitude - myLat, 2) + Math.Pow(supermercado.Longitude - myLon, 2));
+                if (dist < distMaisProximo)
+                {
+                    distMaisProximo = dist;
+                    supermercadoNome = supermercado.Nome;
+                }
+            }
+            return supermercadoNome;
+        }
+
+        private List<Supermercado> getSuperMercadosComProduto()
+        {
+            List<Supermercado> supermercadosComProduto = new List<Supermercado>();
+            List<Supermercado> supermercados = App.db.getAllSupermercados().ToList<Supermercado>();
+            foreach (Supermercado supermercado in supermercados)
+            {
+                //checa se supermercado tem o produto do ingrediente
+                foreach (Produto produto in supermercado.Produtos)
+                {
+                    if (produto.Nome.Equals(ingrediente.Produto.Nome))
+                    {
+                        supermercadosComProduto.Add(supermercado);
+                        break;
+                    }
+                }
+            }
+            return supermercadosComProduto;
         }
 
     }

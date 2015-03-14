@@ -11,11 +11,13 @@
 
     <Grid x:Name="LayoutRoot" Tap="LayoutRoot_Tap">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="20*"/>
-            <ColumnDefinition Width="80*"/>
+            <ColumnDefinition Width="10*"/>
+            <ColumnDefinition Width="50*"/>
+            <ColumnDefinition Width="40*"/>
         </Grid.ColumnDefinitions>
 
-        <TextBox Grid.Column="0" x:Name="CheckPossuo"/>
-        <TextBox Grid.Column="1" x:Name="NomeIngrediente"/>
+        <CheckBox Grid.Column="0" x:Name="CheckPossuo" Checked="CheckPossuo_Checked"/>
+        <TextBlock Grid.Column="1" x:Name="NomeIngrediente"/>
+        <TextBlock Grid.Column="2" x:Name="SupermercadoMaisProximo" Visibility="Collapsed"/>
     </Grid>
 </UserControl>

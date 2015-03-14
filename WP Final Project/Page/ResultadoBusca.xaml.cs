@@ -76,6 +76,7 @@ namespace WP_Final_Project.Page
         {
             List<ReceitaEncontrada> receitasOrdenada = receitasEncontradas.OrderBy(o => o.compatibilidade).ToList();
             receitasOrdenada.Reverse();
+            ListaDeReceitas.Children.Clear();
             foreach (ReceitaEncontrada receitaEncontrada in receitasOrdenada)
             {
                 Receita receita = receitaEncontrada.receita;
