@@ -42,14 +42,10 @@ namespace WP_Final_Project.Page
 
         private static List<Receita> getReceitasFromDB()
         {
-            List<Receita> receitas;
+            List<Receita> receitas = new List<Receita>();
             using (var db = new AppDataContext(AppDataContext.CN))
             {
                 receitas = db.getAllReceitas();
-                if (receitas == null)
-                {
-                    receitas = new List<Receita>();
-                }
             }
             return receitas;
         }

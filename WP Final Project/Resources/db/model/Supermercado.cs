@@ -19,8 +19,7 @@ namespace WP_Final_Project.Resources.db.model
 
         private EntitySet<Produto> _Produtos;
 
-        [Association(Storage = "_Produtos",
-            ThisKey = "IdSupermercado", OtherKey = "IdSupermercado")]
+        [Association(Storage = "_Produtos", ThisKey = "IdSupermercado", OtherKey = "IdSupermercado")]
         public EntitySet<Produto> Produtos
         {
             set
@@ -38,5 +37,10 @@ namespace WP_Final_Project.Resources.db.model
 
         [Column()]
         public int Longitude { get; set; }
+
+        public Supermercado()
+        {
+            Produtos = new EntitySet<Produto>();
+        }
     }
 }

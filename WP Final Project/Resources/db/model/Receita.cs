@@ -22,8 +22,7 @@ namespace WP_Final_Project.Resources.db.model
 
         private EntitySet<Ingrediente> _Ingredientes;
 
-        [Association(Storage = "_Ingredientes",
-            ThisKey = "IdReceita", OtherKey = "IdReceita")]
+        [Association(Storage = "_Ingredientes", ThisKey = "IdReceita", OtherKey = "IdReceita")]
         public EntitySet<Ingrediente> Ingredientes
         {
             set
@@ -34,6 +33,11 @@ namespace WP_Final_Project.Resources.db.model
             {
                 return _Ingredientes;
             }
+        }
+
+        public Receita()
+        {
+            Ingredientes = new EntitySet<Ingrediente>();
         }
     }
 }

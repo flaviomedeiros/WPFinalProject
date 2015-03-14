@@ -63,6 +63,7 @@ namespace WP_Final_Project
                 PhoneApplicationService.Current.UserIdleDetectionMode = IdleDetectionMode.Disabled;
             }
 
+
         }
 
         // Code to execute when a contract activation such as a file open or save picker returns 
@@ -81,6 +82,8 @@ namespace WP_Final_Project
                 {
                     db.CreateDatabase();
                 }
+
+                db.popularDb();
             }
         }
 

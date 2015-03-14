@@ -36,9 +36,21 @@ namespace WP_Final_Project.Resources.db
             add(p1);
             add(p2);
 
-            Ingrediente i1 = new Ingrediente(p1, 2f);
+            Ingrediente i1 = new Ingrediente(p1, 1f);
+            Ingrediente i2 = new Ingrediente(p2, 2f);
 
             add(i1);
+            add(i2);
+            
+            Receita r1 = new Receita();
+            r1.Ingredientes.Add(i1);
+
+            Receita r2 = new Receita();
+            r2.Ingredientes.Add(i1);
+            r2.Ingredientes.Add(i2);
+
+            add(r1);
+            add(r2);
         }
 
         private void removeAll()
