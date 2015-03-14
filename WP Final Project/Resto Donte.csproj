@@ -104,6 +104,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>AppResources.resx</DependentUpon>
     </Compile>
+    <Compile Include="Resources\db\AppDataContext.cs" />
+    <Compile Include="Resources\db\model\Ingrediente.cs" />
+    <Compile Include="Resources\db\model\Produto.cs" />
+    <Compile Include="Resources\db\model\Receita.cs" />
+    <Compile Include="Resources\db\model\Supermercado.cs" />
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">

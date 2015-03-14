@@ -7,6 +7,7 @@ using System.Windows.Navigation;
 using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
 using WP_Final_Project.Resources;
+using WP_Final_Project.Resources.db;
 
 namespace WP_Final_Project
 {
@@ -67,6 +68,13 @@ namespace WP_Final_Project
         // This code will not execute when the application is reactivated
         private void Application_Launching(object sender, LaunchingEventArgs e)
         {
+            using (AppDataContext db = new AppDataContext(AppDataContext.CN))
+            {
+                if (!db.DatabaseExists())
+                {
+                    db.CreateDatabase();
+                }
+            }
         }
 
         // Code to execute when the application is activated (brought to foreground)
