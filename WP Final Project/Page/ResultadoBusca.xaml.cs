@@ -28,28 +28,22 @@ namespace WP_Final_Project.Page
         {
             base.OnNavigatedTo(e);
             receitasEncontradas = new List<ReceitaEncontrada>();
-            List<Receita> receitas = getReceitasFromDB();
-            foreach (Receita receita in receitas)
-            {
-                int compatibilidade = getReceitaCompatibilidade(receita);
-                if (compatibilidade > 0)
-                {
-                    receitasEncontradas.Add(new ReceitaEncontrada(receita, compatibilidade));
-                }
-            }
-            ordenarEExibirResultado();
-        }
 
-        private static List<Receita> getReceitasFromDB()
-        {
-            List<Receita> receitas = new List<Receita>();
             using (var db = new AppDataContext(AppDataContext.CN))
             {
-                receitas = db.getAllReceitas();
+                foreach (Receita receita in db.getAllReceitas())
+                {
+                    int compatibilidade = getReceitaCompatibilidade(receita);
+                    if (compatibilidade > 0)
+                    {
+                        receitasEncontradas.Add(new ReceitaEncontrada(receita, compatibilidade));
+                    }
+                }
             }
-            return receitas;
-        }
 
+            ordenarEExibirResultado();
+        }
+        
         private int getReceitaCompatibilidade(Receita receita)
         {
             int compatibilidade = 0;
